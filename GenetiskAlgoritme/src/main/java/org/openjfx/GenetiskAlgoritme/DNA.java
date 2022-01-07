@@ -2,7 +2,18 @@ package org.openjfx.GenetiskAlgoritme;
 
 public class DNA{
 
-    DNA( float value){
+    float fitness;
+
+    DNA( float Fatness){
 
     }
+
+
+    public void fitness(float Target){
+
+    }
+
+
+
+
 }
