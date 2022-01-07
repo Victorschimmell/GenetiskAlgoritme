@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class Population{
 
- private float mutationRate; // mutation rate
+ private double mutationRate; // mutation rate
 
  private DNA[] population; // Array of current population
 
@@ -19,8 +19,12 @@ public class Population{
 
  private int perfectScore; // 
 
-Population(float MaxPrice, float mutation, int populationMax ){
-    
+Population(float maxPrice, double mutation, int populationMax ){
+    Target = maxPrice;
+    mutationRate = mutation;
+    population = new DNA[populationMax];
+
+
 }
 
 
