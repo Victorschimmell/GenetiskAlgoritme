@@ -1,4 +1,6 @@
+package org.openjfx.GenetiskAlgoritme;
 
+import java.util.ArrayList;
 
 
 public class Population{
@@ -17,7 +19,9 @@ public class Population{
 
  private int perfectScore; // 
 
-Population(float MaxPrice, float mutation, int  )
+Population(float MaxPrice, float mutation, int populationMax ){
+    
+}
 
 
 }
