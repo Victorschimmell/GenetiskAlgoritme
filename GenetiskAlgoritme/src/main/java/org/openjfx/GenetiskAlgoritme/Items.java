@@ -11,15 +11,13 @@ package org.openjfx.GenetiskAlgoritme;
  */
 public class Items {
     
-    private float price;
+    public float price;
     
-     private float weight;
-     
-     private int x;
+     public float weight;
     
       private int type;
      
-      private String name;
+      public String name;
       
       Items(int t){ //constructor
       
@@ -29,63 +27,63 @@ public class Items {
       switch(type){
       
             case 1: 
-                name = "kort"; 
+                name = "Kort"; 
                 weight = 90; 
                 price = 150;
                      break;
             case 2:  
-                name = "kompas";
+                name = "Kompas";
                 weight = 130; 
                 price = 35;
                      break;
             case 3:  
-                name = "vand";
+                name = "Vand";
                 weight = 1530; 
                 price = 200;
                      break;
             case 4:  
-                name = "sandwich";
+                name = "Sandwich";
                 weight = 500; 
                 price = 160;
                      break;
             case 5:  
-                name = "sukker";
+                name = "Sukker";
                 weight = 150; 
                 price = 60;
                      break;
             case 6:  
-                name = "dåsemad";
+                name = "Dåsemad";
                 weight = 680; 
                 price = 45;
                      break;
             case 7:  
-                name = "banan";
+                name = "Banan";
                 weight = 270; 
                 price = 60;
                      break;
             case 8:  
-                name = "æble";
+                name = "Æble";
                 weight = 390; 
                 price = 40;
                      break;
             case 9:  
-                name = "ost";
+                name = "Ost";
                 weight = 230; 
                 price = 30;
                      break;
             case 10: 
-                name = "øl";
+                name = "Øl";
                 weight = 520; 
                 price = 10;
                      break;
             case 11: 
-                name = "solcreme";
+                name = "Solcreme";
                 weight = 110; 
                 price = 70;
                      break;
                      
             case 12: 
-                name = "kamera"; 
+                name = "Kamera"; 
                 weight = 320; 
                 price = 30;
                      break;
@@ -95,67 +93,65 @@ public class Items {
                 price = 15;
                      break;
             case 14:  
-                name = "bukser";
+                name = "Bukser";
                 weight = 480; 
                 price = 10;
                      break;
             case 15:  
-                name = "paraply";
+                name = "Paraply";
                 weight = 730; 
                 price = 40;
                      break;
             case 16:  
-                name = "vandtætte bukser";
+                name = "Vandtætte bukser";
                 weight = 420; 
                 price = 70;
                      break;
             case 17:  
-                name = "vandtæt overtøj";
+                name = "Vandtæt overtøj";
                 weight = 430; 
                 price = 75;
                      break;
             case 18:  
-                name = "pung";
+                name = "Pung";
                 weight = 220; 
                 price = 80;
                      break;
             case 19:  
-                name = "solbriller";
+                name = "Solbriller";
                 weight = 70; 
                 price = 20;
                      break;
             case 20:  
-                name = "håndkælde";
+                name = "Håndkælde";
                 weight = 180; 
                 price = 12;
                      break;
             case 21: 
-                name = "sokker";
+                name = "Sokker";
                 weight = 40; 
                 price = 50;
                      break;
             case 22: 
-                name = "bog";
+                name = "Bog";
                 weight = 300; 
                 price = 10;
                      break;
-                     
-             case 23: 
-                name = "notesbog";
+            case 23: 
+                name = "Notesbog";
                 weight = 900; 
                 price = 1;
-                     break;      
-                     
-               case 24: 
-                name = "telt";
+                     break;        
+            case 24: 
+                name = "Telt";
                 weight = 2000; 
                 price = 150;
                      break;
             
             default: 
-                name = "any Item";
-                weight = x; 
-                price = x;
+                name = "No item";
+                weight = 0; 
+                price = 0;
                      break;
   
       }
