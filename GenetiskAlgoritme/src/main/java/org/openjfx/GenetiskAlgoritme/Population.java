@@ -19,6 +19,8 @@ public class Population{
 
  private int perfectScore; // 
 
+ 
+
 Population(float maxPrice, double mutation, int populationMax ){
     Target = maxPrice;
     mutationRate = mutation;
@@ -26,6 +28,10 @@ Population(float maxPrice, double mutation, int populationMax ){
 
 
 }
+
+
+
+
 
 
 }
