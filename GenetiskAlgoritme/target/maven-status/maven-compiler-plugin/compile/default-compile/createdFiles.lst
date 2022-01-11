@@ -4,4 +4,5 @@ module-info.class
 org/openjfx/GenetiskAlgoritme/Simulation.class
 org/openjfx/GenetiskAlgoritme/Items.class
 org/openjfx/GenetiskAlgoritme/DNA.class
+org/openjfx/GenetiskAlgoritme/Simulation$1.class
 org/openjfx/GenetiskAlgoritme/Menu.class

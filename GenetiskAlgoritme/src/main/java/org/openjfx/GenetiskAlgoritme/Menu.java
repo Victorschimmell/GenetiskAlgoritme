@@ -24,7 +24,7 @@ public class Menu implements Initializable{
         
     }
     
-    public int randint(int min, int max){
+    public static int randint(int min, int max){
 
     return ThreadLocalRandom.current().nextInt(min, max + 1);
     }
