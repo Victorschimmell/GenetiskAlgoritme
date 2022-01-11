@@ -6,7 +6,6 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
-import java.util.concurrent.ThreadLocalRandom;
 
 public class Simulation implements Initializable {
     
