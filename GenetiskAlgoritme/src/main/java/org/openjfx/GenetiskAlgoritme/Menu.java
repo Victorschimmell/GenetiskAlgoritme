@@ -25,7 +25,6 @@ public class Menu implements Initializable {
 
     ArrayList<Integer> popPrice = new ArrayList<Integer>();
 
-
     @FXML
     private Label MutationsRateLabel;
 
@@ -60,32 +59,29 @@ public class Menu implements Initializable {
 
         });
 
-
-        /* TIL PETER; KODE HAN SKAL BRUGE ET ANDET STED!
-            private int maxværdi;
-
-        for (int i = 0; i < 8; i++) {
-            popPrice.add(Menu.randint(1, 8500));
-            System.out.println(popPrice.get(i));
-
-            try {
-                if (popPrice.get(i) > maxværdi) {
-                    maxværdi = popPrice.get(i);
-
-                    System.out.println("Maxværdi = " + maxværdi);
-                }
-
-            } catch (Exception e) {
-
-            }
-
-        }   */
-
-
-       DNA d = new DNA();
+        /*
+         * TIL PETER; KODE HAN SKAL BRUGE ET ANDET STED!
+         * private int maxværdi;
+         * 
+         * for (int i = 0; i < 8; i++) {
+         * popPrice.add(Menu.randint(1, 8500));
+         * System.out.println(popPrice.get(i));
+         * 
+         * try {
+         * if (popPrice.get(i) > maxværdi) {
+         * maxværdi = popPrice.get(i);
+         * 
+         * System.out.println("Maxværdi = " + maxværdi);
+         * }
+         * 
+         * } catch (Exception e) {
+         * 
+         * }
+         * 
+         * }
+         */
 
     }
-  
 
     @FXML
     private void switchToSim() throws IOException {
@@ -98,4 +94,10 @@ public class Menu implements Initializable {
 
         return ThreadLocalRandom.current().nextInt(min, max + 1);
     }
+
+    public static double randdoub(double min, double max) {
+
+        return ThreadLocalRandom.current().nextDouble(min, max + 1);
+    }
+
 }
