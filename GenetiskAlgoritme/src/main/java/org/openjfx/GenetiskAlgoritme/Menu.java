@@ -24,7 +24,7 @@ public class Menu implements Initializable {
     private int backPackAntal = 50;
 
     ArrayList<Integer> popPrice = new ArrayList<Integer>();
-    private int maxværdi;
+
 
     @FXML
     private Label MutationsRateLabel;
@@ -60,6 +60,10 @@ public class Menu implements Initializable {
 
         });
 
+
+        /* TIL PETER; KODE HAN SKAL BRUGE ET ANDET STED!
+            private int maxværdi;
+
         for (int i = 0; i < 8; i++) {
             popPrice.add(Menu.randint(1, 8500));
             System.out.println(popPrice.get(i));
@@ -75,9 +79,13 @@ public class Menu implements Initializable {
 
             }
 
-        }
+        }   */
+
+
+       DNA d = new DNA();
 
     }
+  
 
     @FXML
     private void switchToSim() throws IOException {

@@ -13,7 +13,7 @@ public class Items {
 
     public float price;
 
-    public float weight;
+    public int weight;
 
     private int type;
 
