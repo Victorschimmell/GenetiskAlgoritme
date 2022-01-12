@@ -21,7 +21,7 @@ public class Menu implements Initializable {
     @FXML
     private Slider BackPackSlider;
 
-    private int backPackAntal;
+    private int backPackAntal = 50;
 
     ArrayList<Integer> popPrice = new ArrayList<Integer>();
     private int maxværdi;
@@ -32,7 +32,7 @@ public class Menu implements Initializable {
     @FXML
     private Slider MutationsRateSlider;
 
-    private double mutationsRate;
+    private double mutationsRate = 0.01;
 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
