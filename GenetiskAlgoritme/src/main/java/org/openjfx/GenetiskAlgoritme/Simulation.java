@@ -13,15 +13,14 @@ import javafx.scene.chart.LineChart;
 
 public class Simulation implements Initializable {
 
+
      @FXML
     private LineChart LineChart;
      
-     private int Data;
-    
       
      @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
-        
+        /* 
           LineChart.dataProperty().addListener(new ChangeListener<Number>() {
 
             @Override
@@ -32,14 +31,11 @@ public class Simulation implements Initializable {
             }
           });
                   
-                  
-        Items blyat = new Items(Menu.randint(0,24));
+    
         
-        System.out.println(blyat.name + " : " + blyat.weight + " : " + blyat.price);
-        
-    }
-                  
-   
+        }
+                  */
+      }
 
     @FXML
     private void switchToMenu() throws IOException {

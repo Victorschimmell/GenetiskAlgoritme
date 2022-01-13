@@ -1,35 +1,20 @@
 package org.openjfx.GenetiskAlgoritme;
 
-import java.util.ArrayList;
-
 public class DNA {
-
-    private int maxWeight = 5000;
 
     private int currentWeight;
     private int TotalPrice;
 
-    ArrayList<Items> Genes = new ArrayList<Items>();
-
+    Items[] Genes; // Vores DNA er i alt 24 langt, beseret på at der er 24 forskellige items
     DNA() {
+
         try {
-            currentWeight = 0;
-            while (currentWeight < maxWeight) {
+            Genes = new Items[24];
 
-                try {
-
-                    Genes.add(new Items(Menu.randint(1, 24)));
-
-                    for (int i = Genes.size() - 1; i < Genes.size(); i++) {
-                        currentWeight += Genes.get(i).weight;
-                    }
-
-                } catch (Exception e) {
-                    System.out.println("Fejl2: " + e);
-                }
-
+            for(int i = 0; i < Genes.length; i++){
+                Genes[i] = new Items(Menu.randint(1, 24));
             }
-
+            
         } catch (Exception e) {
             System.out.println("BIG FEJL");
         }
@@ -37,37 +22,35 @@ public class DNA {
     }
 
     DNA(Items[] newgenes) {
-        for (int i = 0; i < newgenes.length; i++) {
-            Genes.add(newgenes[i]);
-        }
+        Genes = newgenes;
     }
 
     public int getWeight() {
         currentWeight = 0;
-        for (int i = 0; i < Genes.size(); i++) {
-            currentWeight += Genes.get(i).weight;
+        for (int i = 0; i < Genes.length; i++) {
+            currentWeight += Genes[i].weight;
         }
         return currentWeight;
     }
 
-    public int getTotalPrice() {
+    public int getPrice() {
         TotalPrice = 0;
-        for (int i = 0; i < Genes.size(); i++) {
-            TotalPrice += Genes.get(i).price;
+        for (int i = 0; i < Genes.length; i++) {
+            TotalPrice += Genes[i].price;
         }
         return TotalPrice;
     }
 
     public DNA crossover(DNA partner) {
-        Items[] child = new Items[Genes.size()];
+        Items[] child = new Items[Genes.length];
 
-        int crossover = Menu.randint(0, Genes.size());
+        int crossover = Menu.randint(0, Genes.length);
 
-        for (int i = 0; i < Genes.size(); i++) {
+        for (int i = 0; i < Genes.length; i++) {
             if (i > crossover) {
-                child[i] = Genes.get(i);
+                child[i] = Genes[i];
             } else {
-                child[i] = partner.Genes.get(i);
+                child[i] = partner.Genes[i];
             }
         }
 
@@ -76,10 +59,10 @@ public class DNA {
     }
 
     public void mutate(double Mutaterate) {
-        for (int i = 0; i < Genes.size(); i++) {
+        for (int i = 0; i < Genes.length; i++) {
             if (Menu.randdoub(0.001, 1) < Mutaterate) {
 
-                Genes.set(i, new Items(Menu.randint(1, 24)));
+                Genes[i] = new Items(Menu.randint(1, 24));
 
             }
         }
