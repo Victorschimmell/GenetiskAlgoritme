@@ -80,8 +80,9 @@ public class Menu implements Initializable {
          * 
          * }
          */
-        BackPack b = new BackPack(new DNA(), 5000);
-        b.fitness();
+            
+
+
     }
 
     @FXML
