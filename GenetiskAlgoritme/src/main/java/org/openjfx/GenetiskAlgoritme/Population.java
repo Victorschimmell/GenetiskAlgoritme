@@ -9,6 +9,7 @@ public class Population {
     public ArrayList<BackPack> matingpool;
     public static double record;
     private int maxweight;
+    private int recordholder = 0;
 
     public static int generations;
 
@@ -39,6 +40,9 @@ public class Population {
         matingpool.clear();
 
         float maxFitness = (float) getMaxFitness();
+
+        System.out.println("MaxFitness belongs to :" + recordholder);
+        printInfo(population[recordholder]);
 
         // Calculate fitness for each member of the population (scaled to value between
         // 0 and 1)
@@ -87,7 +91,7 @@ public class Population {
 
     public double getMaxFitness() {
         record = 0;
-        int recordholder = 0;
+        
 
         for (int i = 0; i < population.length; i++) {
             if (population[i].getFitness() > record) {
@@ -95,9 +99,6 @@ public class Population {
                 recordholder = i;
             }
         }
-
-        System.out.println("MaxFitness belongs to :" + recordholder);
-                printInfo(population[recordholder]);
         return record;
     }
 
