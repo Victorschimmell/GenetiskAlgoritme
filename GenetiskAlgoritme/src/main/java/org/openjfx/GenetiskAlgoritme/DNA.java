@@ -9,7 +9,7 @@ public class DNA {
     DNA() {
 
         try {
-            Genes = new Items[24];
+            Genes = new Items[12];
 
             for(int i = 0; i < Genes.length; i++){
                 Genes[i] = new Items(Menu.randint(1, 24));

@@ -6,9 +6,9 @@ public class BackPack {
 
     private int maxWeight;
 
-    private int weight;
+    public int weight;
 
-    private int price;
+    public int price;
 
     DNA dna;
 
@@ -25,11 +25,8 @@ public class BackPack {
     public void fitness() {
         fitness = price; // Reward finishing faster and getting close
 
-        fitness = Math.pow(fitness, 4); // Make the function exponential
-
         if(weight > maxWeight) fitness*= 0.1; // lose 90% of fitness when getting more than maxweight
-        if(weight< maxWeight) fitness*= 2; // twice the fitness when getting less than maxweight
-
+        if(weight < maxWeight) fitness*= 2; // twice the fitness when getting less than maxweight
     }
 
     public DNA getDNA(){

@@ -9,45 +9,35 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.chart.LineChart;
 
-
-
 public class Simulation implements Initializable {
 
-  private Population population;
+  @FXML
+  private LineChart LineChart;
 
-     @FXML
-    private LineChart LineChart;
-     
-      
-     @Override
-    public void initialize(URL arg0, ResourceBundle arg1) {
-        /* 
-          LineChart.dataProperty().addListener(new ChangeListener<Number>() {
+  @Override
+  public void initialize(URL arg0, ResourceBundle arg1) {
+    
+    /*
+     * LineChart.dataProperty().addListener(new ChangeListener<Number>() {
+     * 
+     * @Override
+     * public void changed(ObservableValue<? extends Number> arg0, Number arg1,
+     * Number arg2) {
+     * 
+     * LineChart = (LineChart) LineChart.getData();
+     * 
+     * }
+     * });
+     * 
+     * }
+     */
 
-            @Override
-            public void changed(ObservableValue<? extends Number> arg0, Number arg1, Number arg2) {
+    Population population = new Population(Menu.mutationsRate, Menu.backPackAntal, 5000);
 
-                LineChart = (LineChart) LineChart.getData();
-                
-            }
-          });
+  }
 
-        }
- */
-
-  population = new Population(Menu.mutationsRate, Menu.backPackAntal, 5000 );
-
-      }
-
-    @FXML
-    private void switchToMenu() throws IOException {
-        App.setRoot("Menu");
-    }
-    }
-
-        
-        
-                
-
-  
-
+  @FXML
+  private void switchToMenu() throws IOException {
+    App.setRoot("Menu");
+  }
+}

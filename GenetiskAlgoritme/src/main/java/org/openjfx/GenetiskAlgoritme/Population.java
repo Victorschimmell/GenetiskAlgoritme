@@ -22,14 +22,13 @@ public class Population {
         for(int i= 0; i < population.length; i++) {
             population[i] = new BackPack(new DNA(), maxweight);
             population[i].fitness();
-            System.out.println("Nr: " + i + " Fitness: " + population[i].getFitness());
-
-            
+            System.out.println("Nr: " + i + " Fitness: " + Math.round(population[i].getFitness()) + " Weight: " + population[i].weight + " Price: " + population[i].price);
 
         }
 
-        getMaxFitness();
+        selection();
 
+        
     }
     // Calculate fitness for each creature
     public void fitness(){
@@ -43,6 +42,11 @@ public class Population {
         matingpool.clear();
 
         float maxFitness = (float) getMaxFitness();
+
+        // Calculate fitness for each member of the population (scaled to value between 0 and 1)
+    // Based on fitness, each member will get added to the mating pool a certain number of times
+    // A higher fitness = more entries to mating pool = more likely to be picked as a parent
+    // A lower fitness = fewer entries to mating pool = less likely to be picked as a parent
         
         for( int i = 0; i < population.length; i++ ) {
             float fitnessNormal = map((float) population[i].getFitness(), 0 , maxFitness, 0, 1);
@@ -86,11 +90,8 @@ public class Population {
         for(int i = 0; i < population.length; i++) {
             if(population[i].getFitness() > record){
                 record = population[i].getFitness();
-                System.out.println("Highest Fitness belongs to NR: " + i);
+                System.out.println("MaxFitness belongs to :"+ i);
             }
-        }
-        if(record == 0){
-            System.out.println("No higest fitness");
         }
         
         return record;
