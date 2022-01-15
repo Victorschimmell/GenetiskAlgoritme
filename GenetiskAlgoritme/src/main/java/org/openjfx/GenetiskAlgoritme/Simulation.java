@@ -3,11 +3,11 @@ package org.openjfx.GenetiskAlgoritme;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
+
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.chart.LineChart;
+import javafx.scene.chart.XYChart;
 
 public class Simulation implements Initializable {
 
@@ -15,26 +15,16 @@ public class Simulation implements Initializable {
 
   @FXML
   private LineChart LineChart;
+  XYChart.Series series = new XYChart.Series();
+
+
 
   @Override
   public void initialize(URL arg0, ResourceBundle arg1) {
 
-    /*
-     * LineChart.dataProperty().addListener(new ChangeListener<Number>() {
-     * 
-     * @Override
-     * public void changed(ObservableValue<? extends Number> arg0, Number arg1,
-     * Number arg2) {
-     * 
-     * LineChart = (LineChart) LineChart.getData();
-     * 
-     * }
-     * });
-     * 
-     * }
-     */
     p = new Population(Menu.mutationsRate, Menu.backPackAntal, 5000);
     run();
+
   }
 
   @FXML
@@ -47,9 +37,16 @@ public class Simulation implements Initializable {
     do {
       p.fitness();
       p.selection();
+      series.getData().add(new XYChart.Data("" + p.getGenerations(), p.getMaxFitness()));
       p.reproduction();
 
     } while (Population.generations <= Menu.genMål);
+    if (Population.generations >= Menu.genMål) {
+
+      series.setName("Bedst rygsæk");
+      LineChart.getData().add(series);
+
+    }
 
   }
 

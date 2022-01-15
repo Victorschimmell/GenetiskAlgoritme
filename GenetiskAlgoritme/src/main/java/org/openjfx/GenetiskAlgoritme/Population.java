@@ -85,7 +85,7 @@ public class Population {
         return generations;
     }
 
-    private double getMaxFitness() {
+    public double getMaxFitness() {
         record = 0;
         int recordholder = 0;
 
