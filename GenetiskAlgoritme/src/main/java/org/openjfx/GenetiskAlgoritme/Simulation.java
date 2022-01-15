@@ -42,7 +42,7 @@ public class Simulation implements Initializable {
     } while (Population.generations <= Menu.genMål);
     if (Population.generations >= Menu.genMål) {
 
-      series.setName("Bedst rygsæk");
+      series.setName("Bedste rygsæk");
       LineChart.getData().add(series);
 
     }
