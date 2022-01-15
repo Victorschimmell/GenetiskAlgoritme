@@ -13,6 +13,8 @@ import javafx.beans.value.ObservableValue;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 
+import java.util.*;
+
 public class Menu implements Initializable {
 
     @FXML
@@ -32,7 +34,6 @@ public class Menu implements Initializable {
     private Slider MutationsRateSlider;
 
     public static double mutationsRate = 0.01;
- 
 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
@@ -60,7 +61,6 @@ public class Menu implements Initializable {
 
         });
 
-
     }
 
     @FXML
@@ -75,9 +75,9 @@ public class Menu implements Initializable {
         return ThreadLocalRandom.current().nextInt(min, max + 1);
     }
 
-    public static double randdoub(double min, double max) {
-
-        return ThreadLocalRandom.current().nextDouble(min, max + 1);
+    public static double randdoub(){
+        Random randomDoub = new Random();
+            return randomDoub.nextDouble();
     }
 
 }

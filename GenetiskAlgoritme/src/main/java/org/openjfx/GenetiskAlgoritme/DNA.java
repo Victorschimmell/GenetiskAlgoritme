@@ -5,16 +5,17 @@ public class DNA {
     private int currentWeight;
     private int TotalPrice;
 
-    Items[] Genes; // Vores DNA er i alt 24 langt, beseret på at der er 24 forskellige items
+    Items[] Genes; 
+
     DNA() {
 
         try {
             Genes = new Items[12];
 
-            for(int i = 0; i < Genes.length; i++){
+            for (int i = 0; i < Genes.length; i++) {
                 Genes[i] = new Items(Menu.randint(1, 24));
             }
-            
+
         } catch (Exception e) {
             System.out.println("BIG FEJL");
         }
@@ -44,7 +45,7 @@ public class DNA {
     public DNA crossover(DNA partner) {
         Items[] child = new Items[Genes.length];
 
-        int crossover = Menu.randint(0, Genes.length);
+        int crossover = Menu.randint(1, Genes.length);
 
         for (int i = 0; i < Genes.length; i++) {
             if (i > crossover) {
@@ -60,7 +61,7 @@ public class DNA {
 
     public void mutate(double Mutaterate) {
         for (int i = 0; i < Genes.length; i++) {
-            if (Menu.randdoub(0.001, 1) < Mutaterate) {
+            if (Menu.randdoub() < Mutaterate) {
 
                 Genes[i] = new Items(Menu.randint(1, 24));
 

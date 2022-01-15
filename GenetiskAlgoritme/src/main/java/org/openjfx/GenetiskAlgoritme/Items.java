@@ -22,7 +22,7 @@ public class Items {
     Items(int t) { // constructor
 
         type = t;
-        
+
         switch (type) {
 
             case 1:

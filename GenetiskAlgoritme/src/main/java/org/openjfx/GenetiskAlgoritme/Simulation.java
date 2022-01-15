@@ -32,7 +32,14 @@ public class Simulation implements Initializable {
      * }
      */
 
-    Population population = new Population(Menu.mutationsRate, Menu.backPackAntal, 5000);
+    Population p = new Population(Menu.mutationsRate, Menu.backPackAntal, 5000);
+
+    while(p.generations < 5){
+      p.fitness();
+      p.selection();
+      p.reproduction();
+
+    }
 
   }
 

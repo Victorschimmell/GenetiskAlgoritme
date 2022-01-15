@@ -19,51 +19,54 @@ public class Population {
         generations = 0;
         maxweight = maxweight_;
 
-        for(int i= 0; i < population.length; i++) {
+        for (int i = 0; i < population.length; i++) {
             population[i] = new BackPack(new DNA(), maxweight);
-            population[i].fitness();
-            System.out.println("Nr: " + i + " Fitness: " + Math.round(population[i].getFitness()) + " Weight: " + population[i].weight + " Price: " + population[i].price);
 
-        }
-
-        selection();
-
+        }  
         
     }
+
     // Calculate fitness for each creature
-    public void fitness(){
+    public void fitness() {
         for (int i = 0; i < population.length; i++) {
             population[i].fitness();
+            System.out.println("NR: " + i + " : " + "Fitness: " +population[i].getFitness());
         }
     }
 
     // Generate a mating pool
-    public void selection(){
+    public void selection() {
         matingpool.clear();
 
         float maxFitness = (float) getMaxFitness();
 
-        // Calculate fitness for each member of the population (scaled to value between 0 and 1)
-    // Based on fitness, each member will get added to the mating pool a certain number of times
-    // A higher fitness = more entries to mating pool = more likely to be picked as a parent
-    // A lower fitness = fewer entries to mating pool = less likely to be picked as a parent
-        
-        for( int i = 0; i < population.length; i++ ) {
-            float fitnessNormal = map((float) population[i].getFitness(), 0 , maxFitness, 0, 1);
-            int n = Math.round(fitnessNormal*100);
+        // Calculate fitness for each member of the population (scaled to value between
+        // 0 and 1)
+        // Based on fitness, each member will get added to the mating pool a certain
+        // number of times
+        // A higher fitness = more entries to mating pool = more likely to be picked as
+        // a parent
+        // A lower fitness = fewer entries to mating pool = less likely to be picked as
+        // a parent
 
-            for( int j = 0; j < n; j++ ) {
+        for (int i = 0; i < population.length; i++) {
+            float fitnessNormal = map((float) population[i].getFitness(), 0, maxFitness, 0, 1);
+            int n = Math.round(fitnessNormal * 100);
+
+            for (int j = 0; j < n; j++) {
                 matingpool.add(population[i]);
             }
         }
+        System.out.println("MatingPoolSize: " + matingpool.size());
+        System.out.println("RANDOM: " + Menu.randint(1, matingpool.size()));
     }
 
-    public void reproduction(){
+    public void reproduction() {
 
         for (int i = 0; i < population.length; i++) {
             // Sping the wheel of fortune to pick two parents
-            int m = (Menu.randint(1,matingpool.size()));
-            int d = (Menu.randint(1,matingpool.size()));
+            int m = (Menu.randint(1, matingpool.size()));
+            int d = (Menu.randint(1, matingpool.size()));
             // Pick two parents
             BackPack mom = matingpool.get(m);
             BackPack dad = matingpool.get(d);
@@ -76,34 +79,33 @@ public class Population {
             child.mutate(mutationRate);
             // Fill the new population with the new child
             population[i] = new BackPack(child, maxweight);
-          }
-          generations++;
-    }   
+        }
+        generations++;
+    }
 
-    public int getGenerations(){
+    public int getGenerations() {
         return generations;
     }
 
-    private double getMaxFitness(){
+    private double getMaxFitness() {
         record = 0;
 
-        for(int i = 0; i < population.length; i++) {
-            if(population[i].getFitness() > record){
+        for (int i = 0; i < population.length; i++) {
+            if (population[i].getFitness() > record) {
                 record = population[i].getFitness();
-                System.out.println("MaxFitness belongs to :"+ i);
+                System.out.println("MaxFitness belongs to :" + i);
             }
         }
-        
+
         return record;
     }
 
-    static public final float map(float value, 
-                              float istart, 
-                              float istop, 
-                              float ostart, 
-                              float ostop) {
-    return ostart + (ostop - ostart) * ((value - istart) / (istop - istart));
-}
-
+    static public final float map(float value,
+            float istart,
+            float istop,
+            float ostart,
+            float ostop) {
+        return ostart + (ostop - ostart) * ((value - istart) / (istop - istart));
+    }
 
 }
