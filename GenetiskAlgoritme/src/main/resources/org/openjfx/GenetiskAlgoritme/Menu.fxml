@@ -7,11 +7,11 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.GenetiskAlgoritme.Menu">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.GenetiskAlgoritme.Menu">
    <children>
       <Button layoutX="29.0" layoutY="30.0" mnemonicParsing="false" onAction="#switchToSim" prefHeight="46.0" prefWidth="224.0" text="Start Simulation" />
       <Slider fx:id="BackPackSlider" blockIncrement="50.0" layoutX="29.0" layoutY="150.0" majorTickUnit="10.0" max="500.0" min="50.0" prefHeight="38.0" prefWidth="334.0" showTickLabels="true" showTickMarks="true" />
-      <Label fx:id="BackPackLabel" layoutX="177.0" layoutY="117.0" text="50">
+      <Label fx:id="BackPackLabel" layoutX="177.0" layoutY="117.0" prefHeight="27.0" prefWidth="180.0" text="50">
          <font>
             <Font size="18.0" />
          </font></Label>
@@ -25,7 +25,18 @@
             <Font size="18.0" />
          </font>
       </Text>
-      <Label fx:id="MutationsRateLabel" layoutX="152.0" layoutY="220.0" text="0.01">
+      <Label fx:id="MutationsRateLabel" layoutX="152.0" layoutY="220.0" prefHeight="27.0" prefWidth="204.0" text="0.01">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Text layoutX="29.0" layoutY="326.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Generationsmål:" wrappingWidth="131.888671875">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Slider fx:id="genSlider" blockIncrement="50.0" layoutX="29.0" layoutY="339.0" majorTickUnit="5.0" max="200.0" min="5.0" minorTickCount="5" prefHeight="38.0" prefWidth="334.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
+      <Label fx:id="genLabel" layoutX="163.0" layoutY="305.0" prefHeight="27.0" prefWidth="190.0" text="5">
          <font>
             <Font size="18.0" />
          </font>

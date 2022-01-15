@@ -18,22 +18,18 @@ import java.util.*;
 public class Menu implements Initializable {
 
     @FXML
-    private Label BackPackLabel;
+    private Label BackPackLabel, MutationsRateLabel, genLabel;
 
     @FXML
-    private Slider BackPackSlider;
+    private Slider BackPackSlider, MutationsRateSlider, genSlider;
 
     public static int backPackAntal = 50;
 
-    ArrayList<Integer> popPrice = new ArrayList<Integer>();
-
-    @FXML
-    private Label MutationsRateLabel;
-
-    @FXML
-    private Slider MutationsRateSlider;
-
     public static double mutationsRate = 0.01;
+
+    public static int genMål = 5;
+
+    ArrayList<Integer> popPrice = new ArrayList<Integer>();
 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
@@ -56,6 +52,17 @@ public class Menu implements Initializable {
 
                 backPackAntal = (int) BackPackSlider.getValue();
                 BackPackLabel.setText(Integer.toString(backPackAntal));
+
+            }
+
+        });
+
+        genSlider.valueProperty().addListener(new ChangeListener<Number>() {
+
+            public void changed(ObservableValue<? extends Number> arg0, Number arg1, Number arg2) {
+
+                genMål = (int) genSlider.getValue();
+                genLabel.setText(Integer.toString(genMål));
 
             }
 

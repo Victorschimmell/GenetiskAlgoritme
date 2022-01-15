@@ -11,12 +11,14 @@ import javafx.scene.chart.LineChart;
 
 public class Simulation implements Initializable {
 
+  Population p;
+
   @FXML
   private LineChart LineChart;
 
   @Override
   public void initialize(URL arg0, ResourceBundle arg1) {
-    
+
     /*
      * LineChart.dataProperty().addListener(new ChangeListener<Number>() {
      * 
@@ -31,20 +33,24 @@ public class Simulation implements Initializable {
      * 
      * }
      */
-
-    Population p = new Population(Menu.mutationsRate, Menu.backPackAntal, 5000);
-
-    while(p.generations < 5){
-      p.fitness();
-      p.selection();
-      p.reproduction();
-
-    }
-
+    p = new Population(Menu.mutationsRate, Menu.backPackAntal, 5000);
+    run();
   }
 
   @FXML
   private void switchToMenu() throws IOException {
     App.setRoot("Menu");
   }
+
+  private void run() {
+
+    do {
+      p.fitness();
+      p.selection();
+      p.reproduction();
+
+    } while (Population.generations <= Menu.genMål);
+
+  }
+
 }

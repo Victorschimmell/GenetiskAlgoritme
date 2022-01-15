@@ -10,13 +10,13 @@ public class Population {
     public static double record;
     private int maxweight;
 
-    int generations;
+    public static int generations;
 
     Population(double m, int num, int maxweight_) {
         mutationRate = m;
         population = new BackPack[num];
         matingpool = new ArrayList<BackPack>();
-        generations = 0;
+        generations = 1;
         maxweight = maxweight_;
 
         for (int i = 0; i < population.length; i++) {
@@ -30,7 +30,7 @@ public class Population {
     public void fitness() {
         for (int i = 0; i < population.length; i++) {
             population[i].fitness();
-            System.out.println("NR: " + i + " : " + "Fitness: " +population[i].getFitness());
+            //System.out.println("NR: " + i + " : " + "Fitness: " +population[i].getFitness());
         }
     }
 
@@ -57,16 +57,14 @@ public class Population {
                 matingpool.add(population[i]);
             }
         }
-        System.out.println("MatingPoolSize: " + matingpool.size());
-        System.out.println("RANDOM: " + Menu.randint(1, matingpool.size()));
     }
 
     public void reproduction() {
 
         for (int i = 0; i < population.length; i++) {
             // Sping the wheel of fortune to pick two parents
-            int m = (Menu.randint(1, matingpool.size()));
-            int d = (Menu.randint(1, matingpool.size()));
+            int m = (Menu.randint(1, matingpool.size()-1));
+            int d = (Menu.randint(1, matingpool.size()-1));
             // Pick two parents
             BackPack mom = matingpool.get(m);
             BackPack dad = matingpool.get(d);
@@ -89,14 +87,17 @@ public class Population {
 
     private double getMaxFitness() {
         record = 0;
+        int recordholder = 0;
 
         for (int i = 0; i < population.length; i++) {
             if (population[i].getFitness() > record) {
                 record = population[i].getFitness();
-                System.out.println("MaxFitness belongs to :" + i);
+                recordholder = i;
             }
         }
 
+        System.out.println("MaxFitness belongs to :" + recordholder);
+                printInfo(population[recordholder]);
         return record;
     }
 
@@ -106,6 +107,12 @@ public class Population {
             float ostart,
             float ostop) {
         return ostart + (ostop - ostart) * ((value - istart) / (istop - istart));
+    }
+
+    public void printInfo(BackPack b){
+        
+        System.out.println("FitnessScore: " + b.getFitness() + " : Weight: "+ b.weight + " : Price: " + b.price + " : Generations: " + generations);
+
     }
 
 }
