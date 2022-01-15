@@ -21,8 +21,14 @@ public class Population {
 
         for(int i= 0; i < population.length; i++) {
             population[i] = new BackPack(new DNA(), maxweight);
+            population[i].fitness();
+            System.out.println("Nr: " + i + " Fitness: " + population[i].getFitness());
+
+            
 
         }
+
+        getMaxFitness();
 
     }
     // Calculate fitness for each creature
@@ -78,10 +84,15 @@ public class Population {
         record = 0;
 
         for(int i = 0; i < population.length; i++) {
-            if(population[i].getFitness() < record){
+            if(population[i].getFitness() > record){
                 record = population[i].getFitness();
+                System.out.println("Highest Fitness belongs to NR: " + i);
             }
         }
+        if(record == 0){
+            System.out.println("No higest fitness");
+        }
+        
         return record;
     }
 

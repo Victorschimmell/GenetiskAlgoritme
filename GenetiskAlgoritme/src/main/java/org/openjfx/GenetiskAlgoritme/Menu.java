@@ -21,7 +21,7 @@ public class Menu implements Initializable {
     @FXML
     private Slider BackPackSlider;
 
-    private int backPackAntal = 50;
+    public static int backPackAntal = 50;
 
     ArrayList<Integer> popPrice = new ArrayList<Integer>();
 
@@ -31,7 +31,8 @@ public class Menu implements Initializable {
     @FXML
     private Slider MutationsRateSlider;
 
-    private double mutationsRate = 0.01;
+    public static double mutationsRate = 0.01;
+ 
 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
@@ -58,6 +59,8 @@ public class Menu implements Initializable {
             }
 
         });
+
+
 
         /*
          * TIL PETER; KODE HAN SKAL BRUGE ET ANDET STED!

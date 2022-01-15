@@ -13,6 +13,7 @@ import javafx.scene.chart.LineChart;
 
 public class Simulation implements Initializable {
 
+  private Population population;
 
      @FXML
     private LineChart LineChart;
@@ -30,11 +31,12 @@ public class Simulation implements Initializable {
                 
             }
           });
-                  
-    
-        
+
         }
-                  */
+ */
+
+  population = new Population(Menu.mutationsRate, Menu.backPackAntal, 5000 );
+
       }
 
     @FXML

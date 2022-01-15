@@ -23,7 +23,7 @@ public class BackPack {
     }
 
     public void fitness() {
-        fitness = (1/price); // Reward finishing faster and getting close
+        fitness = price; // Reward finishing faster and getting close
 
         fitness = Math.pow(fitness, 4); // Make the function exponential
 
