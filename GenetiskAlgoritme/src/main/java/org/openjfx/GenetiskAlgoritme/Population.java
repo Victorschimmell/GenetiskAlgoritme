@@ -9,7 +9,7 @@ public class Population {
     public ArrayList<BackPack> matingpool;
     public static double record;
     private int maxweight;
-    private int recordholder = 0;
+    public static int recordholder = 0;
 
     public static int generations;
 
