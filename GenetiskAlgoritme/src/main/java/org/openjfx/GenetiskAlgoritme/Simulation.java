@@ -15,7 +15,7 @@ public class Simulation implements Initializable {
 
   @FXML
   private LineChart LineChart;
-  XYChart.Series series = new XYChart.Series();
+  private XYChart.Series series = new XYChart.Series();
 
 
 
@@ -37,7 +37,7 @@ public class Simulation implements Initializable {
     do {
       p.fitness();
       p.selection();
-      series.getData().add(new XYChart.Data("" + p.getGenerations(), p.getMaxFitness()));
+      series.getData().add(new XYChart.Data("" + p.getGenerations(), p.population[Population.recordholder].price));
       p.reproduction();
 
     } while (Population.generations <= Menu.genMål);
