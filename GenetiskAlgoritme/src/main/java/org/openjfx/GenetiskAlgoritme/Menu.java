@@ -34,6 +34,13 @@ public class Menu implements Initializable {
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
 
+        MutationsRateLabel.setText(String.valueOf(mutationsRate));
+        MutationsRateSlider.setValue(mutationsRate);
+        BackPackLabel.setText(Integer.toString(backPackAntal));
+        BackPackSlider.setValue(backPackAntal);
+        genLabel.setText(Integer.toString(genMål));
+        genSlider.setValue(genMål);
+
         MutationsRateSlider.valueProperty().addListener(new ChangeListener<Number>() {
 
             @Override
