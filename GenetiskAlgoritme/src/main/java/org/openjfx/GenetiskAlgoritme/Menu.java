@@ -18,16 +18,20 @@ import java.util.*;
 public class Menu implements Initializable {
 
     @FXML
-    private Label BackPackLabel, MutationsRateLabel, genLabel;
+    private Label BackPackLabel, MutationsRateLabel, genLabel, DNALabel, VægtLabel;
 
     @FXML
-    private Slider BackPackSlider, MutationsRateSlider, genSlider;
+    private Slider BackPackSlider, MutationsRateSlider, genSlider, DNASlider, VægtSlider;
 
     public static int backPackAntal = 50;
 
     public static double mutationsRate = 0.01;
 
     public static int genMål = 5;
+
+    public static int dnaSize = 12;
+
+    public static int MaxWeight = 5000;
 
     ArrayList<Integer> popPrice = new ArrayList<Integer>();
 
@@ -40,6 +44,10 @@ public class Menu implements Initializable {
         BackPackSlider.setValue(backPackAntal);
         genLabel.setText(Integer.toString(genMål));
         genSlider.setValue(genMål);
+        DNALabel.setText(Integer.toString(dnaSize));
+        DNASlider.setValue(dnaSize);
+        VægtLabel.setText(Integer.toString(MaxWeight) + " g");
+        VægtSlider.setValue(MaxWeight);
 
         MutationsRateSlider.valueProperty().addListener(new ChangeListener<Number>() {
 
@@ -70,6 +78,28 @@ public class Menu implements Initializable {
 
                 genMål = (int) genSlider.getValue();
                 genLabel.setText(Integer.toString(genMål));
+
+            }
+
+        });
+
+        DNASlider.valueProperty().addListener(new ChangeListener<Number>() {
+
+            public void changed(ObservableValue<? extends Number> arg0, Number arg1, Number arg2) {
+
+                dnaSize = (int) DNASlider.getValue();
+                DNALabel.setText(Integer.toString(dnaSize));
+
+            }
+
+        });
+
+        VægtSlider.valueProperty().addListener(new ChangeListener<Number>() {
+
+            public void changed(ObservableValue<? extends Number> arg0, Number arg1, Number arg2) {
+
+                MaxWeight = (int) VægtSlider.getValue();
+                VægtLabel.setText(Integer.toString(MaxWeight)  + " g");
 
             }
 

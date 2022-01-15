@@ -13,7 +13,7 @@ public class Population {
 
     public static int generations;
 
-    Population(double m, int num, int maxweight_) {
+    Population(double m, int num, int maxweight_, int DNAS) {
         mutationRate = m;
         population = new BackPack[num];
         matingpool = new ArrayList<BackPack>();
@@ -21,7 +21,7 @@ public class Population {
         maxweight = maxweight_;
 
         for (int i = 0; i < population.length; i++) {
-            population[i] = new BackPack(new DNA(), maxweight);
+            population[i] = new BackPack(new DNA(DNAS), maxweight);
 
         }  
         

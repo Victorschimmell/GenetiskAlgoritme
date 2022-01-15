@@ -18,11 +18,10 @@ public class Simulation implements Initializable {
   private XYChart.Series series = new XYChart.Series();
 
 
-
   @Override
   public void initialize(URL arg0, ResourceBundle arg1) {
 
-    p = new Population(Menu.mutationsRate, Menu.backPackAntal, 5000);
+    p = new Population(Menu.mutationsRate, Menu.backPackAntal, Menu.MaxWeight, Menu.dnaSize);
     run();
 
   }

@@ -7,10 +7,10 @@ public class DNA {
 
     Items[] Genes; 
 
-    DNA() {
+    DNA(int DNAS) {
 
         try {
-            Genes = new Items[12];
+            Genes = new Items[DNAS];
 
             for (int i = 0; i < Genes.length; i++) {
                 Genes[i] = new Items(Menu.randint(1, 24));
