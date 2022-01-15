@@ -61,31 +61,6 @@ public class Menu implements Initializable {
         });
 
 
-
-        /*
-         * TIL PETER; KODE HAN SKAL BRUGE ET ANDET STED!
-         * private int maxværdi;
-         * 
-         * for (int i = 0; i < 8; i++) {
-         * popPrice.add(Menu.randint(1, 8500));
-         * System.out.println(popPrice.get(i));
-         * 
-         * try {
-         * if (popPrice.get(i) > maxværdi) {
-         * maxværdi = popPrice.get(i);
-         * 
-         * System.out.println("Maxværdi = " + maxværdi);
-         * }
-         * 
-         * } catch (Exception e) {
-         * 
-         * }
-         * 
-         * }
-         */
-            
-
-
     }
 
     @FXML
