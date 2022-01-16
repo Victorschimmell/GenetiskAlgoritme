@@ -5,7 +5,7 @@ public class DNA {
     private int currentWeight;
     private int TotalPrice;
 
-    Items[] Genes; 
+    public Items[] Genes;
 
     DNA(int DNAS) {
 

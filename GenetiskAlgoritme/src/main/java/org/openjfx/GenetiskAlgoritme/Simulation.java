@@ -24,6 +24,7 @@ public class Simulation implements Initializable {
     p = new Population(Menu.mutationsRate, Menu.backPackAntal, Menu.MaxWeight, Menu.dnaSize);
     run();
 
+
   }
 
   @FXML
@@ -42,7 +43,8 @@ public class Simulation implements Initializable {
     } while (Population.generations <= Menu.genMål);
     if (Population.generations >= Menu.genMål) {
 
-      series.setName("Bedst rygsæk");
+      System.out.println(p.population[Population.recordholder].getDNAinfo());
+      series.setName("Bedste rygsæk");
       LineChart.getData().add(series);
 
     }
