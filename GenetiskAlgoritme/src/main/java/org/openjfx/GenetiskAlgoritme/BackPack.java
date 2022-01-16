@@ -25,7 +25,7 @@ public class BackPack {
     }
 
     public void fitness() {
-        fitness = price; // Reward finishing faster and getting close
+        fitness = price; // Reward for getting a high price
 
         if (weight > maxWeight)
             fitness *= 0.05; // lose 95% of fitness when getting more than maxweight
