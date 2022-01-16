@@ -8,10 +8,14 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.XYChart;
+import javafx.scene.text.Text;
 
 public class Simulation implements Initializable {
 
   Population p;
+
+  @FXML
+  private Text IndholdLabel;
 
   @FXML
   private LineChart LineChart;
@@ -44,7 +48,8 @@ public class Simulation implements Initializable {
     if (Population.generations >= Menu.genMål) {
 
       System.out.println(p.population[Population.recordholder].getDNAinfo());
-      series.setName("Bedste rygsæk");
+      IndholdLabel.setText(p.population[Population.recordholder].getDNAinfo());
+      series.setName("Bedste rygsæk for hver generation");
       LineChart.getData().add(series);
 
     }

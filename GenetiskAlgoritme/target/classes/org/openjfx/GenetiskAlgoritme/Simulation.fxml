@@ -5,11 +5,13 @@
 <?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.GenetiskAlgoritme.Simulation">
    <children>
-      <Button layoutX="20" layoutY="20" mnemonicParsing="false" onAction="#switchToMenu" text="Gå til tilbage" />
-      <LineChart fx:id="LineChart" layoutX="117.0" layoutY="100.0" title="Pris pr. generationer">
+      <Button layoutX="642.0" layoutY="538.0" mnemonicParsing="false" onAction="#switchToMenu" prefHeight="39.0" prefWidth="131.0" text="Start ny simulation" />
+      <LineChart fx:id="LineChart" layoutX="14.0" layoutY="14.0" prefHeight="402.0" prefWidth="770.0" title="Pris pr. generationer">
         <xAxis>
           <CategoryAxis label="Generationer" side="BOTTOM" />
         </xAxis>
@@ -17,5 +19,10 @@
           <NumberAxis label="Pris" side="LEFT" upperBound="5000.0" />
         </yAxis>
       </LineChart>
+      <Text layoutX="70.0" layoutY="437.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sidste generations bedste rygsæk indeholder følgende genstande:" textAlignment="CENTER" wrappingWidth="691.0">
+         <font>
+            <Font size="19.0" />
+         </font></Text>
+      <Text fx:id="IndholdLabel" layoutX="70.0" layoutY="466.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Indhold:" textAlignment="CENTER" wrappingWidth="691.0" />
    </children>
 </AnchorPane>

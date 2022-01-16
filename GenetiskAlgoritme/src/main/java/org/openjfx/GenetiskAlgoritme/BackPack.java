@@ -31,6 +31,8 @@ public class BackPack {
             fitness *= 0.05; // lose 95% of fitness when getting more than maxweight
         if (weight < maxWeight)
             fitness *= 4; // four times the fitness when getting less than maxweight
+
+        
     }
 
     public DNA getDNA() {
